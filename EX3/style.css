@@ -1,0 +1,373 @@
+body {
+    margin: 0;
+    background-color: #fff8f5;
+    font-family: Arial, sans-serif;
+    color: #4b3030;
+}
+
+header {
+    background-color: #f7b6c2;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    color: #632b2b;
+    font-size: 34px;
+    margin: 5px;
+}
+
+header p {
+    color: #704545;
+    margin: 10px;
+}
+
+nav {
+    background-color: #8b3a62;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 3px;
+    font-weight: bold;
+}
+
+nav a:link {
+    color: white;
+}
+
+nav a:visited {
+    color: #ffe0ed;
+}
+
+nav a:hover {
+    background-color: #c75b83;
+    color: white;
+}
+
+nav a:active {
+    background-color: #632b2b;
+}
+
+.welcome {
+    width: 80%;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.welcome-text {
+    width: 55%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cake-image {
+    width: 35%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cake-image img {
+    width: 280px;
+    height: 190px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.small-title {
+    color: #b23a68;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.welcome h2 {
+    color: #632b2b;
+    font-size: 35px;
+    margin: 15px;
+    text-shadow: 1px 1px 2px #e8b9c7;
+}
+
+.welcome p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.order-button {
+    display: inline-block;
+    background-color: #8b3a62;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.order-button:hover {
+    background-color: #632b2b;
+}
+
+.cakes {
+    width: 84%;
+    margin: 30px auto;
+    padding: 35px;
+    background-color: #fde1e5;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cakes h2 {
+    color: #632b2b;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.section-text {
+    color: #6d5555;
+    font-size: 15px;
+}
+
+.cake-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.cake {
+    width: 27%;
+    min-height: 330px;
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cake img {
+    width: 180px;
+    height: 150px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.cake h3 {
+    color: #b23a68;
+    font-size: 19px;
+}
+
+.cake p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.price {
+    color: #632b2b;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.cake:hover {
+    box-shadow: 0 5px 12px #d8b8b8;
+}
+
+.table-title {
+    color: #632b2b;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #8b3a62;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #d8b8b8;
+}
+
+tr:hover {
+    background-color: #fff1f3;
+}
+
+.offers {
+    width: 80%;
+    margin: 30px auto;
+    padding: 35px;
+    background-color: #632b2b;
+    color: white;
+    box-sizing: border-box;
+}
+
+.offers h2 {
+    font-size: 28px;
+}
+
+.offers ul {
+    line-height: 2;
+    font-size: 15px;
+}
+
+.order {
+    width: 75%;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.order h2 {
+    color: #632b2b;
+    font-size: 30px;
+    margin: 10px;
+}
+
+form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 95%;
+    padding: 11px;
+    border: 1px solid #d5baba;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    background-color: #fff1f3;
+}
+
+.form-buttons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+input[type="submit"] {
+    width: 140px;
+    background-color: #8b3a62;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="reset"] {
+    width: 90px;
+    background-color: #888;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #8b3a62;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer h3 {
+    margin: 5px;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+@media screen and (max-width: 700px) {
+    header h1 {
+        font-size: 27px;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    .welcome {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .welcome-text,
+    .cake-image {
+        width: 100%;
+        display: block;
+    }
+
+    .cake-image img {
+        width: 230px;
+        height: 160px;
+        margin-top: 20px;
+    }
+
+    .welcome h2 {
+        font-size: 27px;
+    }
+
+    .cakes {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .cake {
+        width: 90%;
+    }
+
+    .offers {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .order {
+        width: 90%;
+        padding: 25px;
+    }
+
+    input,
+    select {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
