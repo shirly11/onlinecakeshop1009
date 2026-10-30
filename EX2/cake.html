@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights Online Cake Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Sweet Delights</h1>
+    <p>Fresh Cakes for Every Celebration</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#cakes">Our Cakes</a>
+    <a href="#offers">Offers</a>
+    <a href="#order">Order Now</a>
+</nav>
+
+<section id="home" class="welcome">
+    <div class="welcome-text">
+        <p class="small-title">WELCOME TO SWEET DELIGHTS</p>
+        <h2>Every Celebration Needs a Cake</h2>
+        <p>Delicious cakes made with love for your special moments.</p>
+        <p>Birthdays • Weddings • Parties • Celebrations</p>
+        <a href="#order" class="order-button">Order Your Cake</a>
+    </div>
+
+    <div class="cake-image">
+        <img src="cake.jpg" alt="Delicious Cake">
+    </div>
+</section>
+
+<section id="cakes" class="cakes">
+    <p class="small-title">OUR COLLECTION</p>
+    <h2>Our Delicious Cakes</h2>
+    <p class="section-text">Choose your favourite cake from our collection.</p>
+
+    <div class="cake-container">
+        <div class="cake">
+            <img src="chocolate cake.jpg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Soft chocolate cake with delicious chocolate cream.</p>
+            <p class="price">₹600</p>
+        </div>
+
+        <div class="cake">
+            <img src="strawberry cake.jpg" alt="Strawberry Cake">
+            <h3>Strawberry Cake</h3>
+            <p>Fresh strawberry cake with a creamy topping.</p>
+            <p class="price">₹650</p>
+        </div>
+
+        <div class="cake">
+            <img src="Vanilla Cake.jpg" alt="Vanilla Cake">
+            <h3>Vanilla Cake</h3>
+            <p>Soft vanilla cake with tasty cream.</p>
+            <p class="price">₹550</p>
+        </div>
+
+        <div class="cake">
+            <img src="Pineapple Cake.jpg" alt="Pineapple Cake">
+            <h3>Pineapple Cake</h3>
+            <p>Fresh pineapple cake with sweet cream.</p>
+            <p class="price">₹600</p>
+        </div>
+
+        <div class="cake">
+            <img src="Red Velvet Cake.jpg" alt="Red Velvet Cake">
+            <h3>Red Velvet Cake</h3>
+            <p>Soft red velvet cake with cream frosting.</p>
+            <p class="price">₹750</p>
+        </div>
+
+        <div class="cake">
+            <img src="Black Forest Cake.jpg" alt="Black Forest Cake">
+            <h3>Black Forest Cake</h3>
+            <p>Chocolate cake with cream and cherry.</p>
+            <p class="price">₹700</p>
+        </div>
+    </div>
+
+    <h2 class="table-title">Cake Price List</h2>
+
+    <table>
+        <tr>
+            <th>Cake Name</th>
+            <th>Size</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Chocolate Cake</td>
+            <td>1 kg</td>
+            <td>₹600</td>
+        </tr>
+        <tr>
+            <td>Strawberry Cake</td>
+            <td>1 kg</td>
+            <td>₹650</td>
+        </tr>
+        <tr>
+            <td>Vanilla Cake</td>
+            <td>1 kg</td>
+            <td>₹550</td>
+        </tr>
+        <tr>
+            <td>Pineapple Cake</td>
+            <td>1 kg</td>
+            <td>₹600</td>
+        </tr>
+        <tr>
+            <td>Red Velvet Cake</td>
+            <td>1 kg</td>
+            <td>₹750</td>
+        </tr>
+        <tr>
+            <td>Black Forest Cake</td>
+            <td>1 kg</td>
+            <td>₹700</td>
+        </tr>
+    </table>
+</section>
+
+<section id="offers" class="offers">
+    <p class="small-title">SPECIAL OFFERS</p>
+    <h2>Sweet Deals for You</h2>
+    <ul>
+        <li>10% discount on birthday cakes</li>
+        <li>Free delivery for orders above ₹1000</li>
+        <li>Special cakes for weddings</li>
+        <li>Custom cake designs available</li>
+        <li>Fresh cakes made every day</li>
+    </ul>
+</section>
+
+<section id="order" class="order">
+    <p class="small-title">PLACE YOUR ORDER</p>
+    <h2>Order Your Favourite Cake</h2>
+    <p class="section-text">Fill in your details to order your favourite cake.</p>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"
+               pattern="[A-Za-z ]+" required
+               placeholder="Enter your name">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{10}" required
+               placeholder="Enter 10 digit phone number">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"
+               required placeholder="Enter your email">
+
+        <label for="cake">Select Cake:</label>
+        <select id="cake" name="cake">
+            <option>Chocolate Cake</option>
+            <option>Strawberry Cake</option>
+            <option>Vanilla Cake</option>
+            <option>Pineapple Cake</option>
+            <option>Red Velvet Cake</option>
+            <option>Black Forest Cake</option>
+        </select>
+
+        <div class="form-buttons">
+            <input type="submit" value="Place Order">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</section>
+
+<footer>
+    <h3>Sweet Delights Online Cake Shop</h3>
+    <p>Fresh Cakes | Best Quality | Fast Delivery</p>
+    <p>© 2026 Sweet Delights</p>
+</footer>
+
+</body>
+</html>
