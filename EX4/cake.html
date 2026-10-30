@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Delights - Online Cake Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<h1>SWEET DELIGHTS</h1>
+<p>Online Cake Shop - Fresh Cakes Made With Love</p>
+</header>
+
+<nav class="nav">
+<div class="dropdown">
+<a href="#">Home</a>
+<div class="dropdown-content">
+<a href="#cakes">Chocolate Cakes</a>
+<a href="#cakes">Red Velvet Cakes</a>
+<a href="#cakes">Black Forest Cakes</a>
+<a href="#cakes">Fruit Cakes</a>
+<a href="#cakes">Vanilla Cakes</a>
+<a href="#cakes">Strawberry Cakes</a>
+</div>
+</div>
+<a href="#about">About</a>
+<a href="#cakes">Cakes</a>
+<a href="#offers">Offers</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="auth-section" id="auth">
+<div class="form-box">
+<h2>Sign-In</h2>
+<form id="signinForm">
+<label>Username / Email:</label>
+<input type="text" id="signinUser" placeholder="Enter username or email" required>
+<label>Password:</label>
+<input type="password" id="signinPassword" placeholder="Enter password" required>
+<button type="submit" class="btn">Sign In</button>
+<p>New customer? <a href="#signup">Create an account</a></p>
+</form>
+</div>
+
+<div class="form-box" id="signup">
+<h2>Sign-Up</h2>
+<form id="signupForm">
+<label>Name:</label>
+<input type="text" placeholder="Enter your name" pattern="[A-Za-z ]+" title="Name should contain only letters and spaces" required>
+<label>Email:</label>
+<input type="email" placeholder="Enter your email" required>
+<label>Phone Number:</label>
+<input type="tel" placeholder="Enter 10 digit phone number" pattern="[0-9]{10}" maxlength="10" title="Phone number must contain exactly 10 digits" required>
+<label>Password:</label>
+<input type="password" placeholder="Create a password" required>
+<label>Favourite Cake:</label>
+<select required>
+<option value="">Select a cake</option>
+<option>Chocolate Cake</option>
+<option>Red Velvet Cake</option>
+<option>Black Forest Cake</option>
+<option>Pineapple Cake</option>
+<option>Strawberry Cake</option>
+<option>Vanilla Cake</option>
+</select>
+<button type="submit" class="btn">Create Account</button>
+</form>
+</div>
+</section>
+
+<main id="shop" hidden>
+<section class="welcome" id="about">
+<h2>Welcome to Sweet Delights</h2>
+<p>Welcome to Sweet Delights, your favourite online cake shop. We offer freshly baked cakes for birthdays, weddings, anniversaries and every special occasion.</p>
+<p>Choose your favourite flavour and enjoy delicious cakes delivered fresh to your doorstep.</p>
+</section>
+
+<section class="offer" id="offers">
+<h2>SPECIAL CAKE OFFER</h2>
+<p>Get 20% OFF on all birthday cakes!</p>
+<p>Free delivery on orders above ₹1000.</p>
+</section>
+
+<section class="cake-section" id="cakes">
+<h2>Our Popular Cakes</h2>
+<div class="cake-container">
+
+<div class="cake-card">
+<img src="chocolate cake.jpg" alt="Chocolate Cake">
+<h3>Chocolate Cake</h3>
+<p>Rich and creamy chocolate cake perfect for chocolate lovers.</p>
+<p class="price">₹650</p>
+<button class="btn">Order Now</button>
+</div>
+
+<div class="cake-card">
+<img src="Red Velvet Cake.jpg" alt="Red Velvet Cake">
+<h3>Red Velvet Cake</h3>
+<p>Soft red velvet layers with delicious cream cheese frosting.</p>
+<p class="price">₹850</p>
+<button class="btn">Order Now</button>
+</div>
+
+<div class="cake-card">
+<img src="Black Forest Cake.jpg" alt="Black Forest Cake">
+<h3>Black Forest Cake</h3>
+<p>Delicious chocolate cake layered with cream and cherries.</p>
+<p class="price">₹700</p>
+<button class="btn">Order Now</button>
+</div>
+
+<div class="cake-card">
+<img src="Pineapple Cake.jpg" alt="Pineapple Cake">
+<h3>Pineapple Cake</h3>
+<p>Soft vanilla cake with fresh pineapple and creamy frosting.</p>
+<p class="price">₹650</p>
+<button class="btn">Order Now</button>
+</div>
+
+<div class="cake-card">
+<img src="strawberry cake.jpg" alt="Strawberry Cake">
+<h3>Strawberry Cake</h3>
+<p>Fresh strawberry cake with delicious cream and strawberry topping.</p>
+<p class="price">₹750</p>
+<button class="btn">Order Now</button>
+</div>
+
+<div class="cake-card">
+<img src="Vanilla Cake.jpg" alt="Vanilla Cake">
+<h3>Vanilla Cake</h3>
+<p>Soft and delicious vanilla cake with smooth creamy frosting.</p>
+<p class="price">₹600</p>
+<button class="btn">Order Now</button>
+</div>
+
+</div>
+</section>
+
+<section class="cake-table">
+<h2>Cake Menu</h2>
+<table>
+<tr><th>Cake</th><th>Flavour</th><th>Weight</th><th>Price</th></tr>
+<tr><td>Chocolate Cake</td><td>Chocolate</td><td>1 Kg</td><td>₹650</td></tr>
+<tr><td>Red Velvet Cake</td><td>Red Velvet</td><td>1 Kg</td><td>₹850</td></tr>
+<tr><td>Black Forest Cake</td><td>Chocolate</td><td>1 Kg</td><td>₹700</td></tr>
+<tr><td>Pineapple Cake</td><td>Pineapple</td><td>1 Kg</td><td>₹650</td></tr>
+<tr><td>Strawberry Cake</td><td>Strawberry</td><td>1 Kg</td><td>₹750</td></tr>
+<tr><td>Vanilla Cake</td><td>Vanilla</td><td>1 Kg</td><td>₹600</td></tr>
+</table>
+</section>
+
+<section class="features">
+<h2>Why Choose Sweet Delights?</h2>
+<ul>
+<li>Freshly baked cakes</li>
+<li>Premium quality ingredients</li>
+<li>Beautiful custom cake designs</li>
+<li>Same-day delivery available</li>
+<li>Affordable prices</li>
+<li>Cakes for every special occasion</li>
+</ul>
+</section>
+
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
+<p>Sweet Delights Cake Shop, Coimbatore, Tamil Nadu</p>
+<p>Phone: 98765 43210</p>
+<p>Email: sweetdelights@gmail.com</p>
+</section>
+</main>
+
+<footer class="footer">
+<p>© 2026 Sweet Delights Online Cake Shop</p>
+<p>Fresh Cakes • Best Quality • Fast Delivery</p>
+<p>Developed by: Your Name</p>
+</footer>
+
+<script>
+document.getElementById("signinForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("auth").hidden = true;
+    document.getElementById("shop").hidden = false;
+    window.scrollTo(0, 0);
+});
+
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Account created successfully! You can now sign in.");
+    document.getElementById("signinUser").value = "";
+    document.getElementById("signinPassword").value = "";
+    document.getElementById("auth").hidden = false;
+    document.getElementById("shop").hidden = true;
+    window.scrollTo(0, 0);
+});
+</script>
+
+</body>
+</html>
