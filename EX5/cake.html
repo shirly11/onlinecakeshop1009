@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights Online Cake Shop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f7;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #d63384;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        nav a:hover {
+            color: #ff85a2;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .welcome img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cakes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cake {
+            background-color: white;
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 8px gray;
+        }
+
+        .cake img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ad2168;
+        }
+
+        #cakeInfo, #result {
+            text-align: center;
+            color: #d63384;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        form {
+            background-color: white;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px gray;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .cake {
+                width: 90%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 10px;
+            }
+
+            .welcome img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header id="header">
+    <h1>🍰 Sweet Delights Online Cake Shop 🍰</h1>
+    <p>Fresh and Delicious Cakes for Every Occasion</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#cakes">Cakes</a>
+    <a href="#order">Order</a>
+</nav>
+
+<div class="container">
+
+    <section id="home" class="welcome">
+        <h2 id="welcomeTitle">Welcome to Sweet Delights!</h2>
+
+        <img id="cakeImage" src="cake.jpg" alt="Cake">
+
+        <p id="description">
+            Choose your favourite cake and place your order online.
+        </p>
+
+        <button id="offerButton">Show Special Offer</button>
+        <p id="offer"></p>
+    </section>
+
+    <section id="cakes">
+        <h2 style="text-align:center;">Our Delicious Cakes</h2>
+
+        <div class="cakes">
+
+            <div class="cake"
+                 onmouseover="showCake('Chocolate Cake')"
+                 onmouseout="hideCake()">
+                <img src="chocolate cake.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>₹500</p>
+                <button onclick="selectCake('Chocolate Cake')">Order Now</button>
+            </div>
+
+            <div class="cake"
+                 onmouseover="showCake('Black Forest Cake')"
+                 onmouseout="hideCake()">
+                <img src="Black Forest Cake.jpg" alt="Black Forest Cake">
+                <h3>Black Forest Cake</h3>
+                <p>₹600</p>
+                <button onclick="selectCake('Black Forest Cake')">Order Now</button>
+            </div>
+
+            <div class="cake"
+                 onmouseover="showCake('Pineapple Cake')"
+                 onmouseout="hideCake()">
+                <img src="Pineapple Cake.jpg" alt="Pineapple Cake">
+                <h3>Pineapple Cake</h3>
+                <p>₹450</p>
+                <button onclick="selectCake('Pineapple Cake')">Order Now</button>
+            </div>
+
+            <div class="cake"
+                 onmouseover="showCake('Red Velvet Cake')"
+                 onmouseout="hideCake()">
+                <img src="Red Velvet Cake.jpg" alt="Red Velvet Cake">
+                <h3>Red Velvet Cake</h3>
+                <p>₹700</p>
+                <button onclick="selectCake('Red Velvet Cake')">Order Now</button>
+            </div>
+
+            <div class="cake"
+                 onmouseover="showCake('Strawberry Cake')"
+                 onmouseout="hideCake()">
+                <img src="strawberry cake.jpg" alt="Strawberry Cake">
+                <h3>Strawberry Cake</h3>
+                <p>₹550</p>
+                <button onclick="selectCake('Strawberry Cake')">Order Now</button>
+            </div>
+
+            <div class="cake"
+                 onmouseover="showCake('Vanilla Cake')"
+                 onmouseout="hideCake()">
+                <img src="Vanilla Cake.jpg" alt="Vanilla Cake">
+                <h3>Vanilla Cake</h3>
+                <p>₹400</p>
+                <button onclick="selectCake('Vanilla Cake')">Order Now</button>
+            </div>
+
+        </div>
+
+        <p id="cakeInfo"></p>
+    </section>
+
+    <section id="order">
+        <h2 style="text-align:center;">Place Your Cake Order</h2>
+
+        <form id="orderForm">
+            <label for="name">Customer Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <p id="nameMessage"></p>
+
+            <label for="cakeSelect">Select Cake:</label>
+            <select id="cakeSelect" required>
+                <option value="">-- Select Cake --</option>
+                <option value="Chocolate Cake">Chocolate Cake</option>
+                <option value="Black Forest Cake">Black Forest Cake</option>
+                <option value="Pineapple Cake">Pineapple Cake</option>
+                <option value="Red Velvet Cake">Red Velvet Cake</option>
+                <option value="Strawberry Cake">Strawberry Cake</option>
+                <option value="Vanilla Cake">Vanilla Cake</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" value="1" required>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" rows="4"
+                      placeholder="Enter delivery address" required></textarea>
+
+            <button type="submit">Place Order</button>
+            <button type="reset">Reset</button>
+        </form>
+
+        <p id="result"></p>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 Sweet Delights Online Cake Shop</p>
+</footer>
+
+<script>
+    const offerButton = document.getElementById("offerButton");
+    const offer = document.getElementById("offer");
+
+    offerButton.addEventListener("click", function() {
+        offer.innerHTML = "🎉 Special Offer: Get 20% OFF on all Cakes! 🎉";
+    });
+
+    function showCake(cakeName) {
+        document.getElementById("cakeInfo").innerHTML =
+            "You are viewing: " + cakeName;
+    }
+
+    function hideCake() {
+        document.getElementById("cakeInfo").innerHTML = "";
+    }
+
+    function selectCake(cakeName) {
+        document.getElementById("cakeSelect").value = cakeName;
+
+        document.getElementById("order").scrollIntoView({
+            behavior: "smooth"
+        });
+
+        document.getElementById("result").innerHTML =
+            "Selected cake: " + cakeName;
+    }
+
+    document.getElementById("name").addEventListener("keyup", function() {
+        const name = document.getElementById("name").value;
+
+        document.getElementById("nameMessage").innerHTML =
+            name ? "Hello, " + name + "!" : "";
+    });
+
+    document.getElementById("cakeSelect").addEventListener("change", function() {
+        const cake = this.value;
+
+        document.getElementById("result").innerHTML =
+            cake ? "You selected: " + cake : "";
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const cake = document.getElementById("cakeSelect").value;
+        const quantity = document.getElementById("quantity").value;
+        const address = document.getElementById("address").value.trim();
+
+        if (!name || !cake || !address || quantity < 1) {
+            document.getElementById("result").innerHTML =
+                "⚠️ Please fill all the required fields.";
+        } else {
+            document.getElementById("result").innerHTML =
+                "✅ Thank you " + name +
+                "! Your order for " + quantity + " " +
+                cake + "(s) has been placed successfully.";
+        }
+    });
+
+    document.getElementById("orderForm").addEventListener("reset", function() {
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("nameMessage").innerHTML = "";
+    });
+</script>
+
+</body>
+</html>
