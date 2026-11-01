@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Cravings | Online Cake Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff8f5;
+            color: #51333d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #713d50;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+        }
+
+        header span {
+            color: #ffd8bd;
+        }
+
+        #clock {
+            font-size: 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px;
+            background: linear-gradient(120deg, #f8dce0, #fff0df);
+        }
+
+        .hero h2 {
+            font-family: Georgia, serif;
+            font-size: 43px;
+            color: #713d50;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #a34f68;
+            color: white;
+            border: none;
+            padding: 12px 23px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #713d50;
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 50px 7%;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #713d50;
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        #offer {
+            background-color: #713d50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            max-width: 850px;
+            margin: 10px auto 25px;
+        }
+
+        #offer h2 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .cake-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .cake-card {
+            background-color: white;
+            padding: 18px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px #00000012;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-8px);
+            border-color: #e8a5b5;
+        }
+
+        .cake-image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .cake-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .cake-card p {
+            font-size: 14px;
+        }
+
+        .price {
+            color: #a34f68;
+            font-size: 21px !important;
+            font-weight: bold;
+            margin: 12px;
+        }
+
+        .cake-card button {
+            width: 90%;
+        }
+
+        #cart {
+            background-color: #f8e7e4;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #cartItems {
+            margin: 15px;
+            line-height: 2;
+        }
+
+        #total {
+            font-size: 23px;
+            font-weight: bold;
+            color: #713d50;
+            margin: 15px;
+        }
+
+        #orderMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        #animationArea {
+            width: 100%;
+            height: 120px;
+            background-color: #f8e7e4;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        #movingCake {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        #fadeBox {
+            background-color: #f2d5d8;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            opacity: 1;
+        }
+
+        #fadeBox h3 {
+            margin-bottom: 10px;
+            color: #713d50;
+        }
+
+        #dateInfo {
+            text-align: center;
+            color: #713d50;
+            font-size: 17px;
+        }
+
+        footer {
+            background-color: #713d50;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 2;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .cake-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sweet <span>Cravings</span></h1>
+        <div id="clock">Loading time...</div>
+    </header>
+
+    <section class="hero">
+        <h2>Every Cake Tells a Story!</h2>
+        <p>Freshly baked happiness, delivered to your doorstep.</p>
+        <button onclick="scrollToCakes()">Explore Cakes</button>
+    </section>
+
+    <section class="section">
+        <div id="offer" class="hidden">
+            <h2>Special Welcome Offer!</h2>
+            <p>Enjoy 10% OFF on your first cake order!</p>
+        </div>
+
+        <div style="text-align:center">
+            <button onclick="showOffer()">Show Offer</button>
+            <button onclick="hideOffer()">Hide Offer</button>
+        </div>
+    </section>
+
+    <section class="section" id="cakes">
+        <h2>Our Delicious Cakes</h2>
+
+        <div class="cake-container" id="cakeContainer"></div>
+
+        <div style="text-align:center; margin-top:25px">
+            <button onclick="changeCakeStyles()">Change Cake Styles</button>
+            <button onclick="resetCakeStyles()">Reset Styles</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🛒 Your Shopping Cart</h2>
+
+        <div id="cart">
+            <div id="cartItems">Your cart is empty.</div>
+            <p id="total">Total: ₹0</p>
+
+            <button onclick="checkout()">Place Order</button>
+            <button onclick="clearCart()">Clear Cart</button>
+
+            <p id="orderMessage"></p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🎂 Cake Delivery Animation</h2>
+        <p style="text-align:center; margin-bottom:20px">
+            Watch our cake move!
+        </p>
+
+        <div id="animationArea">
+            <img src="cake.jpg" alt="Moving Cake" id="movingCake">
+        </div>
+
+        <div style="text-align:center; margin-top:20px">
+            <button onclick="startAnimation()">Start Animation</button>
+            <button onclick="stopAnimation()">Stop Animation</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Special Bakery Message ❤️</h2>
+
+        <div id="fadeBox">
+            <h3>Made with Love!</h3>
+            <p>
+                Every bite brings a little happiness.
+                Taste the sweetness of our freshly baked cakes!
+            </p>
+        </div>
+
+        <div style="text-align:center; margin-top:20px">
+            <button onclick="fadeOut()">Fade Out</button>
+            <button onclick="fadeIn()">Fade In</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Today's Bakery Date</h2>
+        <p id="dateInfo"></p>
+    </section>
+
+    <footer>
+        <p>© 2026 Sweet Cravings | Online Cake Shop</p>
+        <p>Baked Fresh. Delivered with Love ❤️</p>
+    </footer>
+
+    <script>
+
+        // 1. CLASS AND OBJECT
+
+        class Cake {
+            constructor(name, price, image) {
+                this.name = name;
+                this.price = price;
+                this.image = image;
+            }
+
+            getDetails() {
+                return this.name + " - ₹" + this.price;
+            }
+        }
+
+        // Creating Cake Objects
+
+        const cakes = [
+            new Cake("Black Forest Cake", 750, "Black Forest Cake.jpg"),
+            new Cake("Chocolate Cake", 650, "chocolate cake.jpg"),
+            new Cake("Classic Cake", 500, "cake.jpg"),
+            new Cake("Pineapple Cake", 550, "Pineapple Cake.jpg"),
+            new Cake("Red Velvet Cake", 850, "Red Velvet Cake.jpg"),
+            new Cake("Strawberry Cake", 600, "strawberry cake.jpg"),
+            new Cake("Vanilla Cake", 450, "Vanilla Cake.jpg")
+        ];
+
+        // 2. DISPLAY CAKE OBJECTS
+
+        const cakeContainer = document.getElementById("cakeContainer");
+
+        function displayCakes() {
+            cakeContainer.innerHTML = "";
+
+            cakes.forEach((cake, index) => {
+                cakeContainer.innerHTML += `
+                    <div class="cake-card">
+                        <img src="${cake.image}"
+                             alt="${cake.name}"
+                             class="cake-image">
+
+                        <h3>${cake.name}</h3>
+
+                        <p>Freshly baked and delicious!</p>
+
+                        <p class="price">₹${cake.price}</p>
+
+                        <button onclick="addToCart(${index})">
+                            Add to Cart
+                        </button>
+                    </div>
+                `;
+            });
+
+            addMouseEvents();
+        }
+
+        displayCakes();
+
+        // 3. SHOPPING CART
+
+        let cart = [];
+
+        function addToCart(index) {
+            const cake = cakes[index];
+
+            const existing = cart.find(
+                item => item.name === cake.name
+            );
+
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({
+                    name: cake.name,
+                    price: cake.price,
+                    quantity: 1
+                });
+            }
+
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cartItems");
+            const totalElement = document.getElementById("total");
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = "Your cart is empty.";
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <p>
+                        ${item.name}
+                        × ${item.quantity}
+                        = ₹${item.price * item.quantity}
+                    </p>
+                `).join("");
+            }
+
+            let total = cart.reduce(
+                (sum, item) =>
+                    sum + item.price * item.quantity,
+                0
+            );
+
+            totalElement.innerText = "Total: ₹" + total;
+        }
+
+        // CLEAR CART
+
+        function clearCart() {
+            cart = [];
+            updateCart();
+
+            document.getElementById("orderMessage").innerText =
+                "Cart cleared successfully!";
+        }
+
+        // PLACE ORDER
+
+        function checkout() {
+            if (cart.length === 0) {
+                document.getElementById("orderMessage").innerText =
+                    "Please add a cake before ordering!";
+                return;
+            }
+
+            document.getElementById("orderMessage").innerText =
+                "Your cake order has been placed successfully! 🎉";
+
+            cart = [];
+            updateCart();
+        }
+
+        // 4. DATE OBJECT AND DIGITAL CLOCK
+
+        function displayClock() {
+            const now = new Date();
+
+            let hours = String(now.getHours()).padStart(2, "0");
+            let minutes = String(now.getMinutes()).padStart(2, "0");
+            let seconds = String(now.getSeconds()).padStart(2, "0");
+
+            document.getElementById("clock").innerText =
+                "🕒 " + hours + ":" + minutes + ":" + seconds;
+
+            let date = now.getDate();
+            let month = now.getMonth() + 1;
+            let year = now.getFullYear();
+
+            document.getElementById("dateInfo").innerText =
+                "Date: " + date + "/" + month + "/" + year +
+                " | Time: " + now.toTimeString().split(" ")[0];
+        }
+
+        // Display clock immediately
+
+        displayClock();
+
+        // Update clock every second
+
+        let clockTimer = setInterval(displayClock, 1000);
+
+        // WELCOME OFFER
+
+        window.setTimeout(function() {
+            document.getElementById("offer").classList.remove("hidden");
+        }, 2000);
+
+        function showOffer() {
+            document.getElementById("offer").style.display = "block";
+        }
+
+        function hideOffer() {
+            document.getElementById("offer").style.display = "none";
+        }
+
+        // CHANGE CAKE STYLES
+
+        function changeCakeStyles() {
+            let cards = document.querySelectorAll(".cake-card");
+
+            cards.forEach(card => {
+                card.style.backgroundColor = "#ffe1e8";
+                card.style.border = "2px solid #a34f68";
+                card.style.transform = "scale(1.03)";
+            });
+        }
+
+        // RESET CAKE STYLES
+
+        function resetCakeStyles() {
+            let cards = document.querySelectorAll(".cake-card");
+
+            cards.forEach(card => {
+                card.style.backgroundColor = "white";
+                card.style.border = "2px solid transparent";
+                card.style.transform = "scale(1)";
+            });
+        }
+
+        // MOUSE EVENTS
+
+        function addMouseEvents() {
+            document.querySelectorAll(".cake-card").forEach(card => {
+
+                card.addEventListener("mouseover", function() {
+                    card.style.boxShadow = "0 8px 25px #a34f6850";
+                });
+
+                card.addEventListener("mouseout", function() {
+                    card.style.boxShadow = "0 4px 15px #00000012";
+                });
+
+            });
+        }
+
+        // MOVING CAKE ANIMATION
+
+        let position = 0;
+        let animationTimer = null;
+
+        function startAnimation() {
+            if (animationTimer !== null) {
+                return;
+            }
+
+            const cake = document.getElementById("movingCake");
+            const area = document.getElementById("animationArea");
+
+            animationTimer = setInterval(function() {
+                let maxPosition = area.clientWidth - cake.offsetWidth;
+
+                position += 3;
+
+                if (position >= maxPosition) {
+                    position = 0;
+                }
+
+                cake.style.left = position + "px";
+
+            }, 30);
+        }
+
+        function stopAnimation() {
+            clearInterval(animationTimer);
+            animationTimer = null;
+        }
+
+        // FADE OUT ANIMATION
+
+        let fadeTimer = null;
+
+        function fadeOut() {
+            const box = document.getElementById("fadeBox");
+
+            clearInterval(fadeTimer);
+
+            let opacity = Number(getComputedStyle(box).opacity);
+
+            fadeTimer = setInterval(function() {
+
+                if (opacity <= 0.05) {
+                    opacity = 0;
+                    box.style.opacity = opacity;
+
+                    clearInterval(fadeTimer);
+                    fadeTimer = null;
+
+                } else {
+                    opacity -= 0.05;
+                    box.style.opacity = opacity;
+                }
+
+            }, 50);
+        }
+
+        // FADE IN ANIMATION
+
+        function fadeIn() {
+            const box = document.getElementById("fadeBox");
+
+            clearInterval(fadeTimer);
+
+            let opacity = Number(getComputedStyle(box).opacity);
+
+            fadeTimer = setInterval(function() {
+
+                if (opacity >= 0.95) {
+                    opacity = 1;
+                    box.style.opacity = opacity;
+
+                    clearInterval(fadeTimer);
+                    fadeTimer = null;
+
+                } else {
+                    opacity += 0.05;
+                    box.style.opacity = opacity;
+                }
+
+            }, 50);
+        }
+
+        // SMOOTH SCROLLING
+
+        function scrollToCakes() {
+            document.getElementById("cakes").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+    </script>
+
+</body>
+</html>
